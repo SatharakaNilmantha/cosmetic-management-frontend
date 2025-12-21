@@ -1,0 +1,60 @@
+/*--------------------nav bar link decorations part--------------------------*/
+.glass-nav {
+  background: rgba(130, 130, 130, 0.149);
+  border: 2px solid rgba(255, 255, 255, 0.356);
+  border-radius: 9999px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  
+}
+
+.glass-nav1 {
+  margin-top: 3%;
+  background: rgba(130, 130, 130, 0.149);
+  border: 2px solid rgba(255, 255, 255, 0.356);
+  border-radius: 30px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+  
+
+.nav-link {
+  position: relative;
+  padding-bottom: 2px;
+  color: #5a616a; 
+  transition: color 0.3s ease;
+  font-size: large;
+  font-weight: 400;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #A953BAFF, #F68961FF); 
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  /* Gradient text */
+  background: linear-gradient(to right, #A953BAFF, #F68961FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* for Firefox */
+  text-fill-color: transparent;
+}
+
+
