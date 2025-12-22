@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { NavLink } from "react-router-dom";
+import { NavLink ,Link } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
 import { FiShoppingCart } from "react-icons/fi";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
@@ -7,19 +7,20 @@ import logo1 from '../../Images/logo/logoRemovebg1.png';
 import './HeaderComponent.css';
 
 function HeaderComponent() {
+
   const [open, setOpen] = useState(false);
 
   return (
     <>
       {/* Top Announcement Bar */}
-      <div className="text-center font-medium py-1 bg-gradient-to-r from-violet-500 via-[#9938CA] to-[#E0724A]">
+      <div className="text-center font-medium  h-90 bg-red-300 flex items-center justify-center shadow-md">
         <p className='text-white'>
           Exclusive Price Drop! Hurry, <span className="underline underline-offset-2 text-white">Offer Ends Soon!</span>
         </p>
       </div>
 
       {/* Navigation Bar */}
-      <nav className="glass-nav fixed top-4 left-1/2 transform -translate-x-1/2 flex items-center justify-between px-6 py-4 w-[90%] max-w-[1500px] z-50 backdrop-blur-md bg-white/30 border border-white/20 rounded-2xl shadow-lg transition-all">
+      <nav className="glass-nav fixed top-4 left-1/2 transform -translate-x-1/2 flex items-center justify-between px-6 py-4 w-[90%] max-w-[1500px] z-50 backdrop-blur-md bg-white/30 border border-white/30 rounded-[50px]  shadow-lg transition-all">
 
         {/* Logo */}
         <a href="/"> 
@@ -46,7 +47,8 @@ function HeaderComponent() {
           </div>
 
           {/* Login Button */}
-          <button className="cursor-pointer shadow px-6 py-2  bg-[linear-gradient(to_right,#A953BACF,#F68961BE)] hover:bg-[linear-gradient(to_right,#F689619E,#A953BAAF)] transition text-white rounded-full text-sm"> Login</button>
+          <Link to="/login" className="inline-block cursor-pointer shadow px-6 py-2 bg-[linear-gradient(to_right,#A953BACF,#F68961BE)] hover:bg-[linear-gradient(to_right,#F689619E,#A953BAAF)] transition text-white rounded-full text-sm"> Login </Link>
+       
         </div>
 
         {/* Mobile Menu Button */}
@@ -60,7 +62,7 @@ function HeaderComponent() {
           <NavLink to="/Products" className={({ isActive }) => `nav-link ${isActive ? 'active font-semibold' : ''}`} onClick={() => setOpen(false)}>Products</NavLink>
           <NavLink to="/Contact" className={({ isActive }) => `nav-link ${isActive ? 'active font-semibold' : ''}`} onClick={() => setOpen(false)}>Contact</NavLink>
 
-          <button className="cursor-pointer shadow px-6 py-2 mt-2 bg-[linear-gradient(to_right,#A953BACF,#F68961BE)] hover:bg-[linear-gradient(to_right,#F689619E,#A953BAAF)] transition text-white rounded-full text-sm w-full text-center">  Login</button>
+          <Link to="/login" className="inline-block cursor-pointer shadow px-6 py-2 bg-[linear-gradient(to_right,#A953BACF,#F68961BE)] hover:bg-[linear-gradient(to_right,#F689619E,#A953BAAF)]transition text-white rounded-full text-sm">  Login </Link>  
         </div>
       </nav>
     </>

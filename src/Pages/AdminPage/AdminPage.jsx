@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavLink, Route, Routes } from "react-router-dom";
 import {FiHome,FiUsers,FiChevronDown,FiFolder,FiCalendar,FiBookOpen,FiX,FiSettings,FiLogOut,FiMenu} from "react-icons/fi";
 
-import adminWallpaper from '../../Images/others/admin-wallpaper.png';
+import adminWallpaper from '../../Images/others/admin-wallpaper1.png';
 import logo from '../../Images/logo/logoRemovebgwhite.png';
 
 
@@ -26,7 +26,10 @@ function AdminPage() {
       {/* ===================================== */}
 
       {/* Mobile Menu Button */}
-      <button onClick={() => setOpen(true)} className="lg:hidden fixed top-4 right-4 z-50 p-2 bg-gradient-to-r from-[#A953BA] to-[#F68961] text-white rounded-full shadow-lg hover:from-[#F68961] hover:to-[#A953BA] transition-all">
+      <button onClick={() => setOpen(true)} className="lg:hidden fixed top-4 right-4 z-50 p-2 rounded-full shadow-lg 
+             bg-gradient-to-r from-[#A953BA]/40 to-[#F68961]/40 
+             backdrop-blur-md text-white hover:from-[#F68961]/40 hover:to-[#A953BA]/40 
+             transition-all">
         <FiMenu size={24} />
       </button>
 
@@ -84,7 +87,7 @@ function AdminPage() {
 
       <div className="lg:ml-64 p-6 text-white">
         <Routes>
-          <Route path="/dashboard" element={<h1> Dashboard</h1> }/>
+          <Route path="/dashboard" element={<h1> Dashboard </h1> }/>
           <Route path="/users" element={<h1>Users</h1>} />
           <Route path="/projects" element={<h1>Projects</h1>} />
           <Route path="/calendar" element={<h1>Calendar</h1>} />
