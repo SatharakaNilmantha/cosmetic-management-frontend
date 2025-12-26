@@ -29,10 +29,10 @@ function HeaderComponent() {
 
         {/* Desktop Menu */}
         <div className="hidden sm:flex items-center gap-8">
-          <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'active font-semibold' : ''}`}>Home</NavLink>
-          <NavLink to="/About" className={({ isActive }) => `nav-link ${isActive ? 'active font-semibold' : ''}`}>About</NavLink>
-          <NavLink to="/Products" className={({ isActive }) => `nav-link ${isActive ? 'active font-semibold' : ''}`}>Products</NavLink>
-          <NavLink to="/Contact" className={({ isActive }) => `nav-link ${isActive ? 'active font-semibold' : ''}`}>Contact</NavLink>
+          <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'activeLink font-semibold' : ''}`}>Home</NavLink>
+          <NavLink to="/About" className={({ isActive }) => `nav-link ${isActive ? 'activeLink font-semibold' : ''}`}>About</NavLink>
+          <NavLink to="/Products" className={({ isActive }) => `nav-link ${isActive ? 'activeLink font-semibold' : ''}`}>Products</NavLink>
+          <NavLink to="/Contact" className={({ isActive }) => `nav-link ${isActive ? 'activeLink font-semibold' : ''}`}>Contact</NavLink>
 
           {/* Search Bar */}
           <div className="hidden lg:flex items-center gap-1 px-3 py-1.5 rounded-full shadow border border-purple-300 w-50 transition focus-within:border-purple-400 focus-within:ring-purple-200">
