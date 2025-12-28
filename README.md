@@ -3,6 +3,8 @@
 clickSHOP is a modern, responsive, and user-friendly online shopping web application built using **React**, **Tailwind CSS**, and **JavaScript**.  
 It is designed with a clean UI, smooth navigation, and a scalable frontend architecture suitable for real-world e-commerce platforms.
 
+
+
 ---
 
 ## ✨ Key Features
