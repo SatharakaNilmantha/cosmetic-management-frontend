@@ -40,6 +40,7 @@ function HeaderComponent() {
             <IoSearch className="text-gray-500 text-base" />
           </div>
 
+
           {/* Shopping Cart */}
           <div className="relative cursor-pointer">
             <FiShoppingCart className="text-2xl text-gray-500" />
