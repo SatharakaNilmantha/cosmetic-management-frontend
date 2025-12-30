@@ -41,6 +41,7 @@ function HeaderComponent() {
           </div>
 
 
+
           {/* Shopping Cart */}
           <div className="relative cursor-pointer">
             <FiShoppingCart className="text-2xl text-gray-500" />
