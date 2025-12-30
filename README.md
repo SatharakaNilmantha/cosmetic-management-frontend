@@ -7,6 +7,7 @@ It is designed with a clean UI, smooth navigation, and a scalable frontend archi
 
 ## ✨ Key Features
 
+
 - 🧑‍💻 Clean and intuitive user interface  
 - 🛍️ Product listing and browsing experience  
 - 🔍 Product search functionality  
