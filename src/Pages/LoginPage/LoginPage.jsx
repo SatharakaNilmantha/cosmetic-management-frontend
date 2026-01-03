@@ -1,7 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import wallpaper from '../../Images/others/admin-wallpaper2.png';
+import wallpaper from '../../Images/others/wallpaper.png';
 import './LoginPage.css';
+import axios from "axios";
+
+import { toast } from "react-hot-toast";
+import { showWarningToast } from "../../Components/PopupMessageComponent/PopupMessage";
+
 
 function LoginPage() {
   const [activeCard, setActiveCard] = useState(""); // "" | "login" | "forgot" | "forgotOtp" | "resetPassword"
@@ -48,30 +53,50 @@ function LoginPage() {
     }
   };
 
-  // Handle login form submission
-  const handleLoginSubmit = (e) => {
-    e.preventDefault(); // Prevent default form submission
-    
-    // Basic validation
-    if (!email || !password) {
-      alert("Please enter both email and password");
-      return;
+ // Handle login form submission
+async function handleLoginSubmit(e) {
+  e.preventDefault(); // Prevent default form submission
+
+  // Basic validation
+  if (!email || !password) {
+    toast.error("Please enter both email and password");
+    return;
+  }
+
+  try {
+    const response = await axios.post('http://localhost:3000/users/login', { 
+      email, 
+      password 
+    });
+
+    console.log(response.data);
+    toast.success(response.data.message);
+
+    navigate('/'); // Redirect to home page after successful login
+
+  } catch (error) {
+    if (error.response) {
+      // Server responded with a status code outside 2xx
+      console.log("Login error:", error.response.data.message);
+      toast.error(error.response.data.message);
+    }else if (error.request) {
+      // Network error
+      console.log("Network error:", error.message);
+      showWarningToast("Network error: Please check your connection"); // ⚠️ now works
+    } else {
+      // Something else happened
+      console.log("Error:", error.message);
+      toast.error("An unexpected error occurred");
     }
-    
-    // Here you would typically make an API call to authenticate
-    // For now, we'll simulate successful login
-    console.log("Logging in with:", { email, password });
-    
-    // Redirect to home page
-    navigate("/");
-    
-    // You can also store authentication state if needed
-    // localStorage.setItem('isAuthenticated', 'true');
-    // localStorage.setItem('userEmail', email);
-  };
+  }
+
+ 
+  console.log("Logging in with:", { email, password }); // Optional: For debugging only
+}
+
 
   return (
-    <div className="min-h-screen w-screen flex items-center justify-center bg-cover bg-center overflow-hidden" style={{ backgroundImage: `url(${wallpaper})` }}>
+     <div className="min-h-screen w-screen flex items-center justify-center bg-cover bg-center overflow-hidden" style={{ backgroundImage: `url(${wallpaper})` }}>
 
       {/* ===== LOGIN CARD ===== */}
       <div className={`glass-card ${activeCard === "login" ? "active" : "slide-left"}`}>
@@ -180,6 +205,7 @@ function LoginPage() {
           <button   className="underline font-medium"  onClick={() => setActiveCard("login")} >   Login </button>
         </p>
       </div>
+
     </div>
   );
 }
