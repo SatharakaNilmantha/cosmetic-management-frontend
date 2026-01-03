@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavLink, Route, Routes } from "react-router-dom";
 import {FiHome,FiUsers,FiChevronDown,FiFolder,FiCalendar,FiBookOpen,FiX,FiSettings,FiLogOut,FiMenu} from "react-icons/fi";
 
-import adminWallpaper from '../../Images/others/admin-wallpaper1.png';
+import adminWallpaper from '../../Images/others/wallpaper.png';
 import logo from '../../Images/logo/logoRemovebgwhite.png';
 
 

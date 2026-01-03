@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import wallpaper from '../../Images/others/admin-wallpaper2.png';
+import wallpaper from '../../Images/others/wallpaper.png';
 import './SignUpPage.css';
 
 function SignUpPage() {
