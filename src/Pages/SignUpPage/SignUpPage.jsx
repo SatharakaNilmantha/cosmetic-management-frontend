@@ -32,6 +32,7 @@ function SignUpPage() {
     };
   }, []);
 
+  
   // Initialize refs
   useEffect(() => {
     verifyOtpRefs.current = verifyOtpRefs.current.slice(0, 6);
