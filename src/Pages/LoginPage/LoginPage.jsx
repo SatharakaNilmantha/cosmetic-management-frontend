@@ -64,7 +64,7 @@ async function handleLoginSubmit(e) {
   }
 
   try {
-    const response = await axios.post('http://localhost:3000/users/login', { 
+    const response = await axios.post(import.meta.env.VITE_API_URL + '/api/users/login', { 
       email, 
       password 
     });
@@ -72,7 +72,16 @@ async function handleLoginSubmit(e) {
     console.log(response.data);
     toast.success(response.data.message);
 
-    navigate('/'); // Redirect to home page after successful login
+    localStorage.setItem('token', response.data.token); // Store JWT token
+    
+    if (response.data.role === 'admin') {
+      navigate('/admin/dashboard'); // Redirect to admin dashboard
+      return;
+    }else{
+      navigate('/'); // Redirect to user homepage
+      return;
+    }
+    
 
   } catch (error) {
     if (error.response) {
