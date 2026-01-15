@@ -1,0 +1,127 @@
+.header-card {
+  animation: fadeSlideIn 0.5s ease-out forwards;
+}
+
+.HeaderSection {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 16px; /* spacing between left and right */
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.header-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 8px;
+  flex-shrink: 0; /* Prevent shrinking on mobile */
+}
+
+.header-left h1 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.header-left p {
+  font-size: 14px;
+  margin-bottom: 3px;
+  font-weight: 400;
+}
+
+.header-right {
+  text-align: right;
+}
+
+.header-right h2 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.header-right p {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+
+/* Left Section Title Gradient (Couple colors: Purple → Blue) */
+.gradient-text {
+  background: linear-gradient(90deg, #6100fd, #ff00aa); /* Purple → Pink */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Left Section Description Gradient (Matching Tone: Orange → Red) */
+.gradient-text-desc {
+  background: linear-gradient(90deg , #2d70f6, #1ef79d); /* blue → green */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+/* Right Section (Date/Time) Gradient */
+.gradient-text-right {
+  background: linear-gradient(90deg, #00d2ff, #3a7bd5); /* Cyan → Blue */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .HeaderSection {
+    grid-template-columns: 1fr; /* stack vertically */
+    text-align: left;
+  }
+
+  .header-right {
+    text-align: left;
+    margin-top: 10px; /* spacing between left and right sections */
+  }
+
+  .header-left h1 {
+    font-size: 20px; /* slightly smaller on mobile */
+  }
+
+  .header-left p {
+    font-size: 13px;
+  }
+
+  .header-right h2 {
+    font-size: 14px;
+  }
+
+  .header-right p {
+    font-size: 12px;
+  }
+
+  .header-card {
+    padding: 12px 16px;
+  }
+
+  .header-icon {
+    width: 40px;
+    height: 40px;
+  }
+}

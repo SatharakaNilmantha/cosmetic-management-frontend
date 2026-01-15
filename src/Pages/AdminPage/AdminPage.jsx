@@ -5,6 +5,8 @@ import {FiHome,FiUsers,FiChevronDown,FiFolder,FiCalendar,FiBookOpen,FiX,FiSettin
 import adminWallpaper from '../../Images/others/wallpaper.png';
 import logo from '../../Images/logo/logoRemovebgwhite.png';
 
+import ProductPage from "./ProductPage/ProductPage.jsx";
+
 
 function AdminPage() {
   
@@ -51,7 +53,7 @@ function AdminPage() {
               <NavLink to="/admin/users" className={linkClass}><FiUsers /> Users <FiChevronDown className="ms-auto" /></NavLink>
             </li>
             <li>
-              <NavLink to="/admin/projects" className={linkClass}><FiFolder /> Projects <FiChevronDown className="ms-auto" /></NavLink>
+              <NavLink to="/admin/projects" className={linkClass}><FiFolder /> Products <FiChevronDown className="ms-auto" /></NavLink>
             </li>
             <li>
               <NavLink to="/admin/calendar" className={linkClass}> <FiCalendar /> Calendar</NavLink>
@@ -89,7 +91,7 @@ function AdminPage() {
         <Routes>
           <Route path="/dashboard" element={<h1> Dashboard </h1> }/>
           <Route path="/users" element={<h1>Users</h1>} />
-          <Route path="/projects" element={<h1>Projects</h1>} />
+          <Route path="/projects" element={<ProductPage />} />
           <Route path="/calendar" element={<h1>Calendar</h1>} />
           <Route path="/documentation" element={<h1>Documentation</h1>} />
           <Route path="/settings" element={<h1>Settings</h1>} />
