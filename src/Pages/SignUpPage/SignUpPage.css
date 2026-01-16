@@ -30,6 +30,7 @@
   opacity: 0;
 }
 
+
 .slide-right {
   transform: translate(-50%, -50%) translateX(150%);
   opacity: 0;
